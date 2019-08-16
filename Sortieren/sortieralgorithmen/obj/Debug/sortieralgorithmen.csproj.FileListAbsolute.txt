@@ -1,0 +1,9 @@
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\bin\Debug\TestMalen.exe.config
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\bin\Debug\TestMalen.exe
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\bin\Debug\TestMalen.pdb
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\obj\Debug\sortieralgorithmen.csprojAssemblyReference.cache
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\obj\Debug\TestMalen.Form1.resources
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\obj\Debug\TestMalen.Properties.Resources.resources
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\obj\Debug\sortieralgorithmen.csproj.GenerateResource.cache
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\obj\Debug\TestMalen.exe
+C:\Users\doma\Desktop\Schule\Sortieren\Sortieren\sortieralgorithmen\obj\Debug\TestMalen.pdb

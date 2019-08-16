@@ -1,0 +1,10 @@
+C:\Develop\TestMalen\TestMalen\obj\Debug\TestMalen.csprojAssemblyReference.cache
+C:\Develop\TestMalen\TestMalen\obj\Debug\TestMalen.Form1.resources
+C:\Develop\TestMalen\TestMalen\obj\Debug\TestMalen.Properties.Resources.resources
+C:\Develop\TestMalen\TestMalen\obj\Debug\TestMalen.csproj.GenerateResource.cache
+C:\Develop\TestMalen\TestMalen\obj\Debug\TestMalen.csproj.CoreCompileInputs.cache
+C:\Develop\TestMalen\TestMalen\bin\Debug\TestMalen.exe.config
+C:\Develop\TestMalen\TestMalen\bin\Debug\TestMalen.exe
+C:\Develop\TestMalen\TestMalen\bin\Debug\TestMalen.pdb
+C:\Develop\TestMalen\TestMalen\obj\Debug\TestMalen.exe
+C:\Develop\TestMalen\TestMalen\obj\Debug\TestMalen.pdb
