@@ -79,3 +79,67 @@ Die fett gedruckten Zahlen werden jeweils verglichen. Ist die linke größer als
 07 12 42 55 78   4. Durchlauf + Letzter Vergleich
 07 12 42 55 78   Fertig sortiert. 
 ```
+
+## QuickSort
+
+Zunächst wird die zu sortierende Liste in zwei Teillisten („linke“ und „rechte“ Teilliste) getrennt. Dazu wählt Quicksort ein sogenanntes Pivotelement aus der Liste aus. Alle Elemente, die kleiner als das Pivotelement sind, kommen in die linke Teilliste, und alle, die größer sind, in die rechte Teilliste. Die Elemente, die gleich dem Pivotelement sind, können sich beliebig auf die Teillisten verteilen. Nach der Aufteilung sind die Elemente der linken Liste kleiner oder gleich den Elementen der rechten Liste.
+
+Anschließend muss man also nur noch jede Teilliste in sich sortieren, um die Sortierung zu vollenden. Dazu wird der Quicksort-Algorithmus jeweils auf der linken und auf der rechten Teilliste ausgeführt. Jede Teilliste wird dann wieder in zwei Teillisten aufgeteilt und auf diese jeweils wieder der Quicksort-Algorithmus angewandt, und so fort. Diese Selbstaufrufe werden als Rekursion bezeichnet. Wenn eine Teilliste der Länge eins oder null auftritt, so ist diese bereits sortiert und es erfolgt der Abbruch der Rekursion.
+
+Die Positionen der Elemente, die gleich dem Pivotelement sind, hängen vom verwendeten Teilungsalgorithmus ab. Sie können sich beliebig auf die Teillisten verteilen. Da sich die Reihenfolge von gleichwertigen Elementen zueinander ändern kann, ist Quicksort im Allgemeinen nicht stabil (stabile in-place Varianten existieren jedoch[3]).
+
+Das Verfahren muss sicherstellen, dass jede der Teillisten mindestens um eins kürzer ist als die Gesamtliste. Dann endet die Rekursion garantiert nach endlich vielen Schritten. Das kann z. B. dadurch erreicht werden, dass das ursprünglich als Pivot gewählte Element auf einen Platz zwischen den Teillisten gesetzt wird und somit zu keiner Teilliste gehört. 
+
+Die Implementierung der Teilung erfolgt als In-place-Algorithmus: Die Elemente werden nicht in zusätzlichen Speicher kopiert, sondern nur innerhalb der Liste vertauscht. Dafür wird ein Verfahren verwendet, das als Teilen oder auch Partitionieren bezeichnet wird. Danach sind die beiden Teillisten gleich in der richtigen Position. Sobald die Teillisten in sich sortiert wurden, ist die Sortierung der Gesamtliste beendet.
+
+Der folgende Pseudocode illustriert die Arbeitsweise des Algorithmus, wobei daten die zu sortierende Liste mit n Elementen ist. Bei jedem Aufruf von quicksort() gibt links den Index des ersten Elements in der Teilliste an und rechts den des letzten. Beim ersten Aufruf (oberste Rekursionsebene) ist links = 0 und rechts = n-1. Die übergebene Liste wird dabei rekursiv immer weiter geteilt, bis sie nur noch einen Wert enthält.
+
+```csharp
+ funktion quicksort(links, rechts)
+     falls links < rechts dann
+         teiler:= teile(links, rechts)
+         quicksort(links, teiler-1)
+         quicksort(teiler+1, rechts)
+     ende
+ ende
+```
+
+Die folgende Implementierung der Funktion teile teilt das Feld so, dass sich das Pivotelement an seiner endgültigen Position befindet und alle kleineren Elemente davor stehen, während alle größeren danach kommen:
+
+``` csharp
+ funktion teile(links, rechts)
+     i:= links
+     // Starte mit j links vom Pivotelement
+     j:= rechts - 1
+     pivot:= daten[rechts]
+
+     wiederhole
+
+         // Suche von links ein Element, welches größer oder gleich dem Pivotelement ist
+         wiederhole solange i < rechts und daten[i] < pivot
+             i:= i + 1
+         ende
+
+         // Suche von rechts ein Element, welches kleiner als das Pivotelement ist
+         wiederhole solange j > links und daten[j] ≥ pivot
+             j:= j - 1
+         ende
+
+         falls i < j dann
+             tausche daten[i] mit daten[j]
+         ende
+
+     solange i < j // solange i an j nicht vorbeigelaufen ist 
+
+     // Tausche Pivotelement (daten[rechts]) mit neuer endgültiger Position (daten[i])
+     // und gib die neue Position des Pivotelements zurück, beende Durchlauf
+     tausche daten[i] mit daten[rechts]
+     antworte i
+ ende
+```
+
+Nach der Wahl des Pivotelementes wird zunächst ein Element vom Anfang der Liste beginnend gesucht (Index i), welches größer als das Pivotelement ist. Entsprechend wird vom Ende der Liste beginnend ein Element kleiner als das Pivotelement gesucht (Index j). Die beiden Elemente werden dann vertauscht und landen damit in der jeweils richtigen Teilliste. Dann werden die beiden Suchvorgänge von den erreichten Positionen fortgesetzt, bis sich die untere und obere Suche treffen; dort ist die Grenze zwischen den beiden Teillisten. 
+
+### Beispiel
+
+![QuicksortBeispiel](https://programmingwiki.de/images/4/46/QuickSort-Beispiel1.gif)
